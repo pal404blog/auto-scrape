@@ -31,7 +31,7 @@ jobs:
         
         
     - name: Run Selenium script
-      run: python test.py
+      run: python test2.py
       
       
     - name: Commit and Push The Results From Python Selenium Action
