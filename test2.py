@@ -1,4 +1,5 @@
-f = open("demofile3.txt", "w")
 
+f = open("", "w")
 f.write("Woops! I have deleted the content!")
 f.close() 
+print('hello')
