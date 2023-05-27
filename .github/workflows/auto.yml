@@ -29,13 +29,17 @@ jobs:
         chmod +x chromedriver
         sudo mv chromedriver /usr/local/bin/
         
-        - name: Commit and Push The Results From Python Selenium Action
-        run: |
+        
+    - name: Run Selenium script
+      run: python test.py
+      
+      
+    - name: Commit and Push The Results From Python Selenium Action
+      run: |
          git config --global user.name "github-actions[bot]"
          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
          git add -A
          git commit -m "update"
          git push
 
-    - name: Run Selenium script
-      run: python test.py
+
