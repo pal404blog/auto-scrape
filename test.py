@@ -13,14 +13,14 @@ chrome_options.add_argument('--disable-dev-shm-usage')
 driver = webdriver.Chrome('chromedriver',chrome_options=chrome_options)
 wb = openpyxl.Workbook()
 ws = wb.active
-data = (("ID","Name","CGPA", "SGPA", "SOFTWARE GROUP PROJECT-I", "JAVA PROGRAMMING (Theory)","JAVA PROGRAMMING(Practical)", " 	DIGITAL ELECTRONICS(Theory)", " DIGITAL ELECTRONICS(Practical)", "DATA COMMUNICATION & NETWORKING(Theory)","DATA COMMUNICATION & NETWORKING(Practical)", "ART OF PROGRAMMING", "CREATIVITY, PROBLEM SOLVING AND INNOVATION", "DISCRETE MATHEMATICS AND ALGEBRA"))
+data = (("ID","Name","CGPA", "SGPA", " 	DATA STRUCTURES & ALGORITHMS(Theory)","DATA STRUCTURES & ALGORITHMS(Practical)", " 	 	DATABASE MANAGEMENT SYSTEM(Theory)", "  	DATABASE MANAGEMENT SYSTEM(Practical)","SOFTWARE GROUP PROJECT-II", "MPCO(Theory)","MPCO(Practical)", "Python", "Maintanence", "HS"))
 ws.append(data)
 for x in range(181):
     driver.get('https://charusat.edu.in:912/UniExamResult/frmUniversityResult.aspx') # Open Quora website
 
     a1 = driver.find_element('xpath','//*[@id="ddlInst"]') # HTML tag element for email field
     drop = Select(a1)
-    drop.select_by_visible_text('CSPIT')
+    drop.select_by_visible_text('DEPSTAR')
 
     a2 = driver.find_element('xpath','//*[@id="ddlDegree"]') # HTML tag element for password field
     drop = Select(a2)
@@ -28,25 +28,25 @@ for x in range(181):
 
     a3 = driver.find_element('xpath','//*[@id="ddlSem"]') # HTML tag element for password field
     drop = Select(a3)
-    drop.select_by_visible_text('3')
+    drop.select_by_visible_text('4')
 
     a4 = driver.find_element('xpath','//*[@id="ddlScheduleExam"]') # HTML tag element for password field
     drop = Select(a4)
-    drop.select_by_visible_text('NOVEMBER 2022')
+    drop.select_by_visible_text('APRIL 2023')
 
     a5 = driver.find_element('xpath','//*[@id="txtEnrNo"]') # HTML tag element for password field
     
     if x< 154:
         if x < 100:
             if x < 10:
-                a5.send_keys('21CE00'+ str(x+1) )
+                a5.send_keys('21DCE00'+ str(x+1) )
             else:
-                a5.send_keys('21CE0'+ str(x+1) )
+                a5.send_keys('21DCE0'+ str(x+1) )
         
         else :
-            a5.send_keys('21CE'+ str(x+1) )
+            a5.send_keys('21DCE'+ str(x+1) )
     else:
-        a5.send_keys('D22CE'+ str(x+1) )
+        a5.send_keys('D22DCE'+ str(x+1) )
     # Diploma rolls
 
     
@@ -84,7 +84,7 @@ for x in range(181):
 
         data1 = ((idno.text,name.text,cgpa.text , sgpa.text, sgp.text,javat.text,javap.text,det.text,dep.text,dcnt.text,dcnp.text, art.text,creative.text, math.text))
         ws.append(data1)
-        wb.save("result.xlsx")
+        wb.save("result2023.xlsx")
         # f = open("results.txt", "a")
         # f.write(b1.text + ":" + name.text + "\n" + b5.text + ":" + b6.text + "\n" + b3.text + ":" + b4.text +"\n \n")
         # f.close()
