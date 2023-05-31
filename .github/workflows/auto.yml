@@ -24,11 +24,11 @@ jobs:
         
     - name: Download Selenium drivers
       run: |
-        curl -sS -L -o chromedriver.zip https://chromedriver.storage.googleapis.com/$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip
+        curl -sS -L -o chromedriver.zip https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
         unzip chromedriver.zip
         chmod +x chromedriver
         sudo mv chromedriver /usr/local/bin/
-        
+      
         
     - name: Run Selenium script
       run: python test.py
