@@ -20,7 +20,7 @@ for x in range(181):
 
     a1 = driver.find_element('xpath','//*[@id="ddlInst"]') # HTML tag element for email field
     drop = Select(a1)
-    drop.select_by_visible_text('DEPSTAR')
+    drop.select_by_visible_text('CSPIT')
 
     a2 = driver.find_element('xpath','//*[@id="ddlDegree"]') # HTML tag element for password field
     drop = Select(a2)
@@ -39,14 +39,14 @@ for x in range(181):
     if x< 154:
         if x < 100:
             if x < 10:
-                a5.send_keys('21DCE00'+ str(x+1) )
+                a5.send_keys('21CE00'+ str(x+1) )
             else:
-                a5.send_keys('21DCE0'+ str(x+1) )
+                a5.send_keys('21CE0'+ str(x+1) )
         
         else :
-            a5.send_keys('21DCE'+ str(x+1) )
+            a5.send_keys('21CE'+ str(x+1) )
     else:
-        a5.send_keys('D22DCE'+ str(x+1) )
+        a5.send_keys('D22CE'+ str(x+1) )
     # Diploma rolls
 
     
