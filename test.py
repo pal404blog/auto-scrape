@@ -2,6 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.options import Options
+from selenium import webdriver
+
+
 import openpyxl
 
 
@@ -10,7 +13,8 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage')
-driver = webdriver.Chrome('chromedriver')
+driver = webdriver.Chrome()
+
 wb = openpyxl.Workbook()
 ws = wb.active
 data = (("ID","Name","CGPA", "SGPA"))
